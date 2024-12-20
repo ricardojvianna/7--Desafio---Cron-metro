@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cronômetro 2.0 </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <img class="gif" src="https://cdn.pixabay.com/animation/2023/08/10/06/24/06-24-17-858_512.gif" alt="logo-jogo">
+
+    <div class="caixa">
+
+        <h1>0</h1>
+        <button onclick="Start()">Start</button>
+        <button onclick="Stop()">Stop</button>
+        <h3>Cronômetro Online</h3>
+
+    </div>
+
+</body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+    }
+
+    body {
+
+        background-image: url(https://cdn.pixabay.com/photo/2014/02/05/19/04/stopwatch-259375_1280.jpg);
+        background-size: cover;
+
+    }
+
+    .gif {
+
+        height: 250px;
+        display: inline-block;
+        margin-top: 10px;
+        margin-left: 59%;
+
+    }
+
+
+    .caixa {
+
+        background: #A7A7A5;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        margin: 0 auto 40px;
+        margin-top: 20px;
+        margin-left: 50%;
+        padding: 20px;
+        box-shadow: 10px 10px 15px #161616;
+
+    }
+
+    h1 {
+        color: #d20b07;
+        background: #848784;
+        font-style: normal;
+        text-align: center;
+        font-weight: 900;
+        font-size: 150px;
+        line-height: 130px;
+        border-radius: 20px;
+        margin: 90px;
+        box-shadow: 5px 2px 10px #302f2f;
+
+    }
+
+    h3 {
+        color: #d20b07;
+        font-style: normal;
+        text-align: center;
+        font-weight: 900;
+        font-size: 34px;
+        line-height: 50px;
+        border-radius: 50%;
+        padding: 15px;
+
+    }
+
+
+    button {
+        width: 150px;
+        height: 100px;
+        border: none;
+        border-radius: 20px;
+        background: #ff5c0a;
+        color: #FFFFFF;
+        font-weight: 700;
+        font-size: 36px;
+        cursor: pointer;
+        box-shadow: 10px 10px 15px #5a5858;
+        margin: 10px 0px 60px 85px;
+    }
+
+    button:hover {
+        height: 110px;
+    }
+
+    button:active {
+        color: #ff5c0a;
+        background: #FFFFFF;
+    }
+
+    @media screen and (max-width: 800px) {
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin-left: -50px;
+        }
+
+        .gif {
+            height: 200px;
+            margin: 10px 10px 10px 150px;
+        }
+
+
+        .caixa {
+            height: 500px;
+            width: 500px;
+            margin: 0px auto;
+        }
+
+        button {
+            width: 120px;
+            height: 80px;
+            margin: 10px 10px 10px 60px;
+        }
+
+        button:hover {
+            height: 90px;
+
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+</style>
+
+<script>
+
+    let number = 0
+    let cron
+    let h1 = document.querySelector("h1")
+
+    function Start() {
+        cron = setInterval(function () {
+            number++
+            h1.innerHTML = number
+        }, 1000)
+
+    }
+
+    function Stop() {
+        clearInterval(cron) // por isso o setInterval foi colocado dentro do cron
+    }                       // para saber que era esse SetInterval que seria parado
+
+
+</script>
+
+</html>
